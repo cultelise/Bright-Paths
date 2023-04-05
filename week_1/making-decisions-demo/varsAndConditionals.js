@@ -32,12 +32,6 @@ function jamieAttacks() {
 
 jamieAttacks();
 
-if (jonHealth <= 0) {
-  console.log('Jon has fallen to Jamie.');
-} else {
-  console.log(jonHealth);
-}
-
 console.log('Jon picks up a shield, gaining 25 defense.');
 jonDefense += 25;
 

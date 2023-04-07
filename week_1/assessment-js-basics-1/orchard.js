@@ -27,15 +27,13 @@
     in cents. 
 */
 
-const fujiAcres = [2, 3, 3, 2, 2, 2, 1]
-const galaAcres = [5, 2, 4, 3, 6, 2, 4]
-const pinkAcres = [1, 5, 4, 2, 1, 5, 4]
+const fujiAcres = [2, 3, 3, 2, 2, 2, 1];
+const galaAcres = [5, 2, 4, 3, 6, 2, 4];
+const pinkAcres = [1, 5, 4, 2, 1, 5, 4];
 
-const fujiPrice = .89 
-const galaPrice = .64
-const pinkPrice = .55
-
-
+const fujiPrice = 0.89;
+const galaPrice = 0.64;
+const pinkPrice = 0.55;
 
 // PROBLEM 1
 
@@ -51,9 +49,22 @@ const pinkPrice = .55
 
 // CODE HERE
 
+// First, we initialize the totalAcres variable outside of the for loop to keep track of the total number of acres beyond the loop's scope.
+let totalAcres = 0;
 
+// Now, we want to loop over each array, adding the numbers to the totalAcres variable.
+for (let acres of fujiAcres) {
+  totalAcres += acres;
+}
+for (let acres of galaAcres) {
+  totalAcres += acres;
+}
+for (let acres of pinkAcres) {
+  totalAcres += acres;
+}
 
-
+// We log the result to see if it worked.
+console.log(`Total acres picked: ${totalAcres}`);
 
 // PROBLEM 2
 
@@ -69,9 +80,11 @@ const pinkPrice = .55
 
 // CODE HERE
 
+// To calculate the number of acres per day, we can divide the number of acres by the number of days.
+// There are seven days in a week, so it's obvious here how many days there are. However, we could also add a counter in the for loops above if we weren't sure.
+let averageDailyAcres = totalAcres / 21;
 
-
-
+console.log(`Average daily acres picked: ${averageDailyAcres}`);
 
 // PROBLEM 3
 
@@ -102,12 +115,18 @@ const pinkPrice = .55
 
 */
 
-let acresLeft = 174 
-let days = 0
+let acresLeft = 174;
+let days = 0;
 
 // CODE HERE
 
+// We need to increment days by 1 and decrement acresLeft by 3 each loop until acresLeft is 0.
+while (acresLeft > 0) {
+  days += 1;
+  acresLeft -= 3;
+}
 
+console.log(`Days of work left: ${days}`);
 
 // PROBLEM 4
 
@@ -135,14 +154,25 @@ let days = 0
 
 // CODE HERE
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+// First we initialize the arrays.
+let fujiTons = [];
+let galaTons = [];
+let pinkTons = [];
 
+//Now, we loop through the original arrays and push the total number of tons picked per day to each new array (acres per day times tons per acre).
+for (let acres of fujiAcres) {
+  fujiTons.push(acres * 6.5);
+}
+for (let acres of galaAcres) {
+  galaTons.push(acres * 6.5);
+}
+for (let acres of pinkAcres) {
+  pinkTons.push(acres * 6.5);
+}
 
-
-
-
+console.log(`Daily Fuji tons picked: ${fujiTons}`);
+console.log(`Daily Gala tons picked: ${galaTons}`);
+console.log(`Daily Pink tons picked: ${pinkTons}`);
 
 // PROBLEM 5
 
@@ -160,16 +190,27 @@ let days = 0
     Hint: there are 2000 pounds in a ton.
 */
 
-// CODE HERE 
+// CODE HERE
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+// We already have the tons per day. Now we just need to loop through each new array of tons,
+// and multiply each number by 2000--which is the number of pounds in a ton. We add that number to our pound variables.
+let fujiPounds = 0;
+let galaPounds = 0;
+let pinkPounds = 0;
 
+for (let tons of fujiTons) {
+  fujiPounds += tons * 2000;
+}
+for (let tons of galaTons) {
+  galaPounds += tons * 2000;
+}
+for (let tons of pinkTons) {
+  pinkPounds += tons * 2000;
+}
 
-
-
-
+console.log(`Fuji pounds picked: ${fujiPounds} lbs`);
+console.log(`Gala pounds picked: ${galaPounds} lbs`);
+console.log(`Pink pounds picked: ${pinkPounds} lbs`);
 
 // PROBLEM 6
 
@@ -189,14 +230,14 @@ let days = 0
 
 // CODE HERE
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+// Now, we simply multiply the number of pounds per variety by the price per pound.
+let fujiProfit = fujiPounds * fujiPrice;
+let galaProfit = galaPounds * galaPrice;
+let pinkProfit = pinkPounds * pinkPrice;
 
-
-
-
-
+console.log(`Fuji profit: $${fujiProfit}.00`);
+console.log(`Gala profit: $${galaProfit}.00`);
+console.log(`Pink profit: $${pinkProfit}.00`);
 
 // PROBLEM 7
 
@@ -209,3 +250,8 @@ let days = 0
 */
 
 // CODE HERE
+
+// We add each profit together.
+let totalProfit = fujiProfit + galaProfit + pinkProfit;
+
+console.log(`Total profit: $${totalProfit}.00`);

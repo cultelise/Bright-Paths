@@ -44,13 +44,17 @@ let gitInitDefinition =
 
 //CODE HERE
 
+let gitCloneDefinition =
+  '"Git clone" takes a repository already established on GitHub, and "clones" or copies it to the local directory.';
+
 //////////////////PROBLEM 5////////////////////
 /*
     Create a variable called 'gitStatusDefinition'.  
     It should be a string containing your best definition of what 'git status' does.
 */
 
-//CODE HERE
+let gitStatusDefinition =
+  'The "git status" command displays the current state of the repository; i.e what currently is and isn\'t staged, any added files or changes to previous files.';
 
 //////////////////PROBLEM 6////////////////////
 /*
@@ -63,6 +67,11 @@ let gitInitDefinition =
 
 //CODE HERE
 
+let gitAddDefinition =
+  '"Git add" adds newly created files to the staging area, readying them to be committed.';
+
+let gitAddCode = 'git add .';
+
 //////////////////PROBLEM 7////////////////////
 /*
     Create a variable called 'gitCommitDefinition'.  
@@ -74,6 +83,11 @@ let gitInitDefinition =
 
 //CODE HERE
 
+let gitCommitDefinition =
+  '"Git commit" commits the added, changed, or deleted states of the files to the local repository.';
+
+let gitCommitCode = 'git commit -am "initial commit"';
+
 //////////////////PROBLEM 8////////////////////
 /*
     Create a variable called 'gitPushDefinition'.  
@@ -81,3 +95,6 @@ let gitInitDefinition =
 */
 
 //CODE HERE
+
+let gitPushDefinition =
+  '"Git push" updates the remote repository with the state of the locally committed one.';

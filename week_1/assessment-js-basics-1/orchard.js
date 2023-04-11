@@ -82,7 +82,7 @@ console.log(`Total acres picked: ${totalAcres}`);
 
 // To calculate the number of acres per day, we can divide the number of acres by the number of days.
 // There are seven days in a week, so it's obvious here how many days there are. However, we could also add a counter in the for loops above if we weren't sure.
-let averageDailyAcres = totalAcres / 21;
+let averageDailyAcres = totalAcres / 7;
 
 console.log(`Average daily acres picked: ${averageDailyAcres}`);
 
@@ -123,7 +123,7 @@ let days = 0;
 // We need to increment days by 1 and decrement acresLeft by 3 each loop until acresLeft is 0.
 while (acresLeft > 0) {
   days += 1;
-  acresLeft -= 3;
+  acresLeft -= averageDailyAcres;
 }
 
 console.log(`Days of work left: ${days}`);

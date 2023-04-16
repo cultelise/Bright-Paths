@@ -1,0 +1,17 @@
+Google is a very large company, offering a variety of services in addition to their infamous search engine.
+As a primarily web-based company, Google necessarily utilizes HMTL, CSS, & Javascript.
+Google's search engine employs a powerful algorithm and makes use of powerful tools to keep it together.
+On the front end, AngularJS helps streamline their UX/UI. 
+On the back end, Python and Java are used for their robustness and capabilities.
+
+Facebook is a popular social media company that relies heavily on UI/UX and data processing.
+As such, FB created its own Javascript library, React, to organize its front end.
+React has seen great success in the industry, and is one of the most popular front end libraries.
+To help manage their data requirements, FB uses GraphQL, a data query language and runtime. 
+They use the PHP scripting language on the backend.
+
+Netflix is a popular streaming company with complex technical requirements.
+Netflix needs their website to look good and operate smoothly, so they use React on the front end.
+Netflix has millions of users watching thousands of movies and tv shows. 
+They use AWS cloud-based services to help with storage and computing.
+Finally, on the back end, Netflix uses the NodeJS framework and makes use of many other programming languages, including Python and Java.

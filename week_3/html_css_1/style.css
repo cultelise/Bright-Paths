@@ -17,16 +17,13 @@ body {
 main {
   display: flex;
   border: 2px solid white;
-  /* flex-direction: column; */
-  background-image: url('./marco-meyer-8Fn_Fh0X5AY-unsplash\ \(1\).jpg');
+  background-image: url('./pic.jpg');
   height: 500px;
   width: 500px;
   margin: 50px;
   padding: 100px;
   background-repeat: no-repeat;
   background-position: center;
-  /* text-align: center; */
-  /* align-items: center; */
   justify-content: center;
 }
 

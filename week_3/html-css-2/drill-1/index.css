@@ -1,0 +1,22 @@
+body {
+  background-color: lightgray;
+  height: 1024px;
+  width: 1024px;
+  margin: 0px;
+}
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0px 200px;
+  background-color: white;
+  height: inherit;
+}
+.top {
+  background-color: hsl(0, 0%, 30%);
+  height: 180px;
+  width: inherit;
+}
+.bottom {
+  height: 100px;
+  background-color: black;
+}

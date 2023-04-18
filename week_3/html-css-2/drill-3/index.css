@@ -1,0 +1,45 @@
+html {
+  background-color: black;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  height: 1353px;
+  margin: 0px;
+  margin: 0px 100px;
+}
+body * {
+  flex: auto;
+}
+
+#one {
+  background-color: lightgray;
+  flex: 0.4;
+  display: flex;
+  justify-content: left;
+  padding: 25px;
+}
+#child {
+  flex: 0.06;
+  background-color: cornflowerblue;
+}
+#two {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex: 1.2;
+  padding: 50px 30px;
+}
+#three {
+  background-color: cornflowerblue;
+}
+#four {
+  background-color: aquamarine;
+}
+#five {
+  background-color: olivedrab;
+}
+#six {
+  background-color: gold;
+}

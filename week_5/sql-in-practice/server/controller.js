@@ -30,7 +30,6 @@ module.exports = {
 
 	approveAppointment: (req, res) => {
 		let { apptId } = req.body;
-
 		sequelize
 			.query(
 				`
@@ -58,7 +57,10 @@ module.exports = {
         `;
 		sequelize
 			.query(query)
-			.then((dbRes) => res.status(200).send(dbRes[0]))
+			.then((dbRes) => {
+				res.status(200).send(dbRes[0]);
+				console.log(dbRes[0]);
+			})
 			.catch((err) => console.log(err));
 	},
 	getPendingAppointments: (req, res) => {
@@ -81,7 +83,7 @@ module.exports = {
             JOIN cc_emp_appts ea on a.appt_id = ea.appt_id
             JOIN cc_employees e on e.emp_id = ea.emp_id
             JOIN cc_users u on e.user_id = u.user_id
-            WHERE a.approved = true and a.completed = false
+            WHERE a.approved = true and a.completed = true
             ORDER by a.date desc;
         `;
 

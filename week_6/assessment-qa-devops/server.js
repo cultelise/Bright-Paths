@@ -1,6 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const bots = require('./src/botsData');
 const shuffle = require('./src/shuffle');
+const Rollbar = require('rollbar');
+
+const { ROLLBAR_ACCESS_TOKEN } = process.env;
 
 const playerRecord = {
 	wins: 0,
@@ -10,6 +14,12 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
+
+const rollbar = new Rollbar({
+	accessToken: ROLLBAR_ACCESS_TOKEN,
+	captureUncaught: true,
+	captureUnhandledRejections: true,
+});
 
 // Add up the total health of all the robots
 const calculateTotalHealth = (robots) =>
@@ -38,8 +48,11 @@ const calculateHealthAfterAttack = ({ playerDuo, compDuo }) => {
 
 app.get('/api/robots', (req, res) => {
 	try {
+		rollbar.log('robot list requested');
+		// throw new Error('testing rollbar');
 		res.status(200).send(bots);
 	} catch (error) {
+		rollbar.critical('error getting bots', error);
 		console.error('ERROR GETTING BOTS', error);
 		res.sendStatus(400);
 	}
@@ -57,6 +70,8 @@ app.get('/api/robots/shuffled', (req, res) => {
 
 app.post('/api/duel', (req, res) => {
 	try {
+		rollbar.log('duel initiated');
+		// throw new Error('testing rollbar');
 		const { compDuo, playerDuo } = req.body;
 
 		const { compHealth, playerHealth } = calculateHealthAfterAttack({
@@ -73,6 +88,7 @@ app.post('/api/duel', (req, res) => {
 			res.status(200).send('You won!');
 		}
 	} catch (error) {
+		rollbar.critical('error dueling', error);
 		console.log('ERROR DUELING', error);
 		res.sendStatus(400);
 	}
@@ -80,8 +96,11 @@ app.post('/api/duel', (req, res) => {
 
 app.get('/api/player', (req, res) => {
 	try {
+		rollbar.log('player record requested');
+		// throw new Error('testing rollbar');
 		res.status(200).send(playerRecord);
 	} catch (error) {
+		rollbar.critical('error retrieving player stats', error);
 		console.log('ERROR GETTING PLAYER STATS', error);
 		res.sendStatus(400);
 	}

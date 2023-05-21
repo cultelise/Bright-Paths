@@ -12,7 +12,8 @@ function addToZero(arr) {
 
 	return x;
 }
-// 10ms, O(1)
+// time: O(n^2)
+// space: O(1)
 console.log(addToZero([1, 2, 3, -2]));
 
 function hasUniqueChars(str) {
@@ -29,7 +30,8 @@ function hasUniqueChars(str) {
 
 	return true;
 }
-// 20ms, O(n)
+// time: O(n)
+// space: O(n)
 console.log(hasUniqueChars('Monday'));
 
 function isPangram(str) {
@@ -44,7 +46,8 @@ function isPangram(str) {
 
 	return isPangram;
 }
-// 50ms, O(1)
+// time: O(1)
+//  space: O(1)
 console.log(isPangram('The quick brown fox jumps over the lazy dog!'));
 console.log(isPangram('I like cats, but not mice'));
 
@@ -57,5 +60,6 @@ function findLongestWord(list) {
 
 	return list[lengthArr.indexOf(Math.max(...lengthArr))];
 }
-// 50ms O(n)
+// time: O(n)
+// space: O(n)
 console.log(findLongestWord(['hi', 'hello']));

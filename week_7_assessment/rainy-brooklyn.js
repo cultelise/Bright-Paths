@@ -47,7 +47,7 @@ function isPangram(str) {
 	return isPangram;
 }
 // time: O(1)
-//  space: O(1)
+// space: O(1)
 console.log(isPangram('The quick brown fox jumps over the lazy dog!'));
 console.log(isPangram('I like cats, but not mice'));
 
